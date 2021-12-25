@@ -4,30 +4,28 @@ class UserService {
 
     // TODO+: Implement methods to work with user
 
-    createUser(data){
+    createUser(data) {
         return UserRepository.create(data);
     }
 
-    updateUser(request, response){
+    updateUser(request, response) {
         const updatedUser = UserRepository.updateUser(request.params.id, request.body);
         response.send(updatedUser);
-        // return UserRepository.updateUser(id, data);
-
     }
 
-    createUser(request, response){
+    createUser(request, response) {
         const newUser = UserRepository.create(request.body);
         response.send(newUser);
     }
 
-    getUser(request, response){
+    getUser(request, response) {
         const users = UserRepository.getAll();
         response.send(users);
     }
 
     search(search) {
         const item = UserRepository.getOne(search);
-        if(!item) {
+        if (!item) {
             return null;
         }
         return item;
@@ -35,15 +33,15 @@ class UserService {
 
     searchById(search) {
         const item = UserRepository.getOneById(search);
-        if(!item) {
+        if (!item) {
             return null;
         }
         return item;
     }
 
-    delete(id){
+    delete(id) {
         const item = UserRepository.delete(id);
-        if(!item) {
+        if (!item) {
             return null;
         }
         return item;

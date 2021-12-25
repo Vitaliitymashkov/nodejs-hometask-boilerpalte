@@ -2,28 +2,25 @@ const { fighterRepository } = require('../repositories/fighterRepository');
 
 class FighterService {
     // TODO+: Implement methods to work with fighters
-    // createFighter(data){
-    //     return fighterRepository.create(data);
-    // }
-    getFighter(request, response){
+
+    getFighter(request, response) {
         const fighters = fighterRepository.getAll();
         response.send(fighters);
     }
 
-    createFighter(request, response){
+    createFighter(request, response) {
         const newFighter = fighterRepository.create(request.body);
-        response.send(newFighter);  
+        response.send(newFighter);
     }
 
-    updateFighter(request, response){
+    updateFighter(request, response) {
         const updatedFighter = fighterRepository.updateFighter(request.params.id, request.body);
         response.send(updatedFighter);
-        // return UserRepository.updateUser(id, data);
     }
 
     search(search) {
         const item = fighterRepository.getOne(search);
-        if(!item) {
+        if (!item) {
             return null;
         }
         return item;
@@ -31,13 +28,13 @@ class FighterService {
 
     searchById(search) {
         const item = fighterRepository.getOneById(search);
-        if(!item) {
+        if (!item) {
             return null;
         }
         return item;
     }
 
-    delete(id){
+    delete(id) {
         return fighterRepository.delete(id);
     }
 }

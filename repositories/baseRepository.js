@@ -12,26 +12,16 @@ class BaseRepository {
         return v4();
     }
 
-    //DOME
     getAll() {
         return this.dbContext.value();
     }
 
-    //DONE
     getOne(search) {
-        // return this.dbContext.find(element => element.id === search).value();
         return this.dbContext.find(search).value();
     }
 
-    // getOneFighter(search) {
-    //     return this.dbContext.find(element => element.name.toLowerCase() === search.name.toLowerCase()).value();
-    //     // return this.dbContext.find(search).value();
-    // }
-
-    //DONE
     getOneById(search) {
         return this.dbContext.find(element => element.id === search).value();
-        // return this.dbContext.find(search).value();
     }
 
     create(data) {
