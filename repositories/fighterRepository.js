@@ -6,4 +6,4 @@ class FighterRepository extends BaseRepository {
     }
 }
 
-exports.FighterRepository = new FighterRepository();
+exports.fighterRepository = new FighterRepository();
